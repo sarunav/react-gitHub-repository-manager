@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
 import './App.css';
 
-function App() {
+import Header from './components/ui/Header'
+import Home from './components/pages/Home';
+import CreateRepository from './components/pages/CreateRepository';
+import ViewRepository from './components/pages/ViewRepository';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Header />
+
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/add-github" component={CreateRepository} />
+          <Route path="/repository/:id" component={ViewRepository} />
+        </Switch>
+      </Router>
+      </>
   );
 }
 
