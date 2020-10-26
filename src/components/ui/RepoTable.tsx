@@ -24,7 +24,7 @@ const RepoTable = ({ data}: any) => {
                                 <Link to={`/repository/${res.details.id}`}>{res.title}</Link>
                             </td>
                             <td>
-                                <a href={`${res.details.clone_url}`} target="_blank" >{res.details.name}</a>
+                                <a href={`${res.details.clone_url}`} target="_blank" rel="noopener noreferrer" >{res.details.name}</a>
                             </td>
                             </tr>
                         ])

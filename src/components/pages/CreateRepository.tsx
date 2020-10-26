@@ -41,7 +41,7 @@ const CreateRepository = () => {
                 result.then(res => {
                     setItems(res.data);
                     setIsLoading(false);
-                    res.data.length == 20 ? setHasNextPage(true) : setHasNextPage(false)
+                    res.data.length === 20 ? setHasNextPage(true) : setHasNextPage(false)
                   }).catch(err => {
                     setItems([]);
                     setIsLoading(false);
@@ -52,7 +52,7 @@ const CreateRepository = () => {
                 result.then(res => {
                     setItems(res.data.items);
                     setIsLoading(false);
-                    res.data.items.length == 20 ? setHasNextPage(true) : setHasNextPage(false)
+                    res.data.items.length === 20 ? setHasNextPage(true) : setHasNextPage(false)
                   }).catch(err => {
                     setItems([]);
                     setIsLoading(false);
@@ -61,7 +61,7 @@ const CreateRepository = () => {
         }
     
         fetchItems()
-      }, [query, page])
+      }, [query, page, key])
     
     return (
         <Container fluid={false}>
